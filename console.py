@@ -2,11 +2,11 @@ from models.city import City
 from models.user import User
 from models.country import Country
 
-from repositories import user_repository
-from repositories import city_repository
+from repositories import user_repository, country_repository, city_repository
 
 user_repository.delete_all()
 city_repository.delete_all()
+country_repository.delete_all()
 
 user1 = User('Lina', 'Edinburgh', 'Scotland')
 user_repository.save(user1)
@@ -26,3 +26,12 @@ city_repository.save(city2)
 
 city3 = City('Buenos Aires')
 city_repository.save(city3)
+
+country1 = Country('Germany')
+country_repository.save(city1)
+
+country2 = Country('France')
+country_repository.save(city2)
+
+country3 = Country('Argentina')
+country_repository.save(city3)

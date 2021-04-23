@@ -10,5 +10,5 @@ def save(city):
     return city
 
 def delete_all():
-    sql = "DELETE FROM users"
+    sql = "DELETE FROM cities"
     run_sql(sql)

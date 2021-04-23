@@ -5,7 +5,8 @@ from models.country import Country
 from repositories import user_repository
 from repositories import city_repository
 
-# user_repository.delete_all()
+user_repository.delete_all()
+city_repository.delete_all()
 
 user1 = User('Lina', 'Edinburgh', 'Scotland')
 user_repository.save(user1)

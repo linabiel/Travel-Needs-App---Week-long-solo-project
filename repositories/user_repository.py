@@ -11,3 +11,13 @@ def save(user):
 def delete_all():
     sql = "DELETE FROM users"
     run_sql(sql)
+
+def select_all():
+    users = []
+
+    sql = "SELECT * FROM users"
+    results = run_sql(sql)
+    for row in results:
+        user = User(row['name'], row['home_city'], row['home_country'], row['id'])
+        users.append(user)
+    return users

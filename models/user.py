@@ -5,4 +5,4 @@ class User:
         self.home_city = home_city
         self.home_country = home_country
         self.id = id
-        destination = []
+        self.destination = []

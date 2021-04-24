@@ -1,0 +1,22 @@
+﻿{% extends 'base.html' %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block body %}
+
+<h1>Travel  Bucket</h1>
+
+
+{% for user in users %}  
+<div>
+  <p>
+    {{ user.name }}: <b>{{ user.home_city }},</b>
+                        <b>{{ user.home_country }},</b>
+                        <b>{{ user.destination }}</b>
+  </p>
+</div>
+{% endfor %} 
+{% endblock %}
+

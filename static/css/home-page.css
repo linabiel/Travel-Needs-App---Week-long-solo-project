@@ -1,0 +1,53 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-image: url(../images/Iceland.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    color: white;
+}
+
+.nav-bar {
+    display: flex;
+    background-color: black;
+    opacity: 0.5;
+}
+
+.nav-bar li:first-child {
+    margin-right: auto;
+}
+
+.nav-bar li {
+    list-style: none;
+}
+
+#last-nav {
+    padding-right: 40px;
+}
+
+.nav-bar a {
+    color: black;
+    background-color: white;
+    text-decoration: none;
+    padding: 10px 30px;
+    margin: 15px;
+    border-radius: 15px;
+}
+
+.nav-bar .logo {
+    color: white;
+    background-color: black;
+    font-size: xx-large;
+}
+
+footer {
+    padding: 12px;
+    background-color: black;
+    color: white;
+    font-size: small;
+    text-align: center;
+    grid-area: footer;
+    opacity: 0.5;
+}
+

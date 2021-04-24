@@ -12,11 +12,10 @@
 
 <div id='choose-user'>
     <label for="users">Choose a Traveller: </label>
-
     <select name="user" id="user">
         <option value=""></option>
         {% for user in users %}
-        <option value="{{ user.name }}">{{ user.name }}</option>   
+        <option value="{{ user.id }}">{{ user.name }}</option>   
             {% endfor %}
     </select>
 </div>
@@ -27,7 +26,7 @@
     <select name="country" id="country">
         <option value=""></option>
         {% for country in countries %}
-        <option value="{{ country.name }}">{{ country.name }}</option>   
+        <option value="{{ country.id }}">{{ country.name }}</option>   
             {% endfor %}
     </select>
 </div>
@@ -38,7 +37,7 @@
     <select name="city" id="city">
         <option value=""></option>
         {% for city in cities %}
-        <option value="{{ city.name }}">{{ city.name }}</option>   
+        <option value="{{ city.id }}">{{ city.name }}</option>   
             {% endfor %}
     </select>
 </div>
@@ -66,5 +65,14 @@
 
     <button type='submit'>Add to Visited</button>
 </div>
+
+
+<div class="printed-destinations">
+    {% for destination in destinations %}
+        {{ destination.user }}: {{ destination.country }}, {{ destination.city }}
+    {% endfor %}
+
+</div>
+
 
 {% endblock %}

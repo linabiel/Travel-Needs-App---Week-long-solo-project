@@ -22,3 +22,18 @@ def select_all():
         city = City(row['name'], row['id'])
         cities.append(city)
     return cities
+
+def select(id):
+    city = None
+    sql = "SELECT * FROM cities WHERE id = %s"
+    values = [id]
+    result = run_sql(sql, values)[0]
+
+    if result is not None:
+        city = City(result['name'], result['id'] )
+    return city
+
+def delete(id):
+    sql = "DELETE FROM cities WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)

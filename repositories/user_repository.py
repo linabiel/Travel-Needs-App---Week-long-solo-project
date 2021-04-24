@@ -22,5 +22,17 @@ def select_all():
         users.append(user)
     return users
 
-def add_destination():
-    destination = [] 
+def select(id):
+    user = None
+    sql = "SELECT * FROM users WHERE id = %s"
+    values = [id]
+    result = run_sql(sql, values)[0]
+
+    if result is not None:
+        user = Users(result['name'], result['home_city'], result['home_country'], result['id'] )
+    return user
+
+def delete(id):
+    sql = "DELETE FROM users WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)

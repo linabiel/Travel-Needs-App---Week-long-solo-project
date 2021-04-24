@@ -28,10 +28,10 @@ city3 = City('Buenos Aires')
 city_repository.save(city3)
 
 country1 = Country('Germany')
-country_repository.save(city1)
+country_repository.save(country1)
 
 country2 = Country('France')
-country_repository.save(city2)
+country_repository.save(country2)
 
 country3 = Country('Argentina')
-country_repository.save(city3)
+country_repository.save(country3)

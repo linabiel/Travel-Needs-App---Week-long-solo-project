@@ -10,17 +10,61 @@
 
 
 
-<div id='list-destionations'>
+<div id='choose-user'>
     <label for="users">Choose a Traveller: </label>
 
     <select name="user" id="user">
-        <option value=""option>
-            {% for user in users %}
-            <option value={{ user.id }}>{{ user.name }}</option>      
+        <option value=""></option>
+        {% for user in users %}
+        <option value="{{ user.name }}">{{ user.name }}</option>   
             {% endfor %}
     </select>
 </div>
 
+<div id='choose-country'>
+    <label for="countries">Choose a Country: </label>
 
+    <select name="country" id="country">
+        <option value=""></option>
+        {% for country in countries %}
+        <option value="{{ country.name }}">{{ country.name }}</option>   
+            {% endfor %}
+    </select>
+</div>
+
+<div id='choose-city'>
+    <label for="cities">Choose a City: </label>
+
+    <select name="city" id="city">
+        <option value=""></option>
+        {% for city in cities %}
+        <option value="{{ city.name }}">{{ city.name }}</option>   
+            {% endfor %}
+    </select>
+</div>
+
+<div>
+    <form id="country" action="/destinations" method="POST"></form>
+        <div>
+            <label for="country"> Country: </label>
+            <input type="text" id='country' name='country' placeholder="Country" required autofocus>
+        </div>
+
+    <form id="city" action="/destinations" method="POST"></form>
+    <div>
+        <label for="city"> City: </label>
+        <input type="text" id='city' name='city' placeholder="City" required autofocus>
+    </div>
+
+    <div>
+        <label for="visited">Visited: </label>
+        <select name="visited" id="visited">
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>
+    </div>
+
+    <button type='submit'>Add to Visited</button>
+</div>
 
 {% endblock %}

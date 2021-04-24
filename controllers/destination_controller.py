@@ -10,6 +10,7 @@ destinations_blueprint = Blueprint("destinations", __name__)
 
 @destinations_blueprint.route("/destinations")
 def destinations():
+    users = user_repository.select_all()
     countries = country_repository.select_all()
     cities = city_repository.select_all()
-    return render_template('/destinations.html', countries=countries, cities=cities)
+    return render_template('/destinations.html', users=users, countries=countries, cities=cities)

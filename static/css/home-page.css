@@ -1,12 +1,21 @@
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     background-image: url(../images/Iceland.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: 100% 100%;
     color: white;
 }
+
+#page-container {
+    position: relative;
+    min-height: 100vh;
+  }
+
+  #content-wrap {
+    padding-bottom: 2.5rem;    /* Footer height */
+  }
 
 .nav-bar {
     display: flex;
@@ -41,13 +50,29 @@ body {
     font-size: xx-large;
 }
 
+.home-page {
+    /* display: flex;
+    justify-content: center; */
+    text-align: center;
+    padding: 100px;
+    font-size: xx-large;
+}
+
+h1 {
+    font-size: 40px;
+}
+
 footer {
-    padding: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: black;
     color: white;
     font-size: small;
-    text-align: center;
-    grid-area: footer;
-    opacity: 0.5;
+    opacity: 0.7;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 2.5rem;
 }
 

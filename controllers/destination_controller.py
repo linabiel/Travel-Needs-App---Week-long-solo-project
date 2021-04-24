@@ -5,10 +5,9 @@ from models.user import User
 from models.city import City
 from models.country import Country
 
-# Creates a new instance of Blueprint called users
-users_blueprint = Blueprint("users", __name__)
+# Creates a new instance of Blueprint called destination
+destinations_blueprint = Blueprint("destinations", __name__)
 
-@users_blueprint.route("/user")
-def users():
-    users = user_repository.select_all()
-    return render_template('/user.html', users=users)
+@destinations_blueprint.route("/destinations")
+def destinations():
+    return render_template('/destinations.html')

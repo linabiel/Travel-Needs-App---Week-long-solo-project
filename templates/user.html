@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block body %}
+
+<h1>Travellers: </h1>
+
+
+{% for user in users %}  
+<div>
+  <p id='list-users'>
+    {{ user.name }}: <b>{{ user.home_city }},</b>
+                        <b>{{ user.home_country }},</b>
+  </p>
+</div>
+{% endfor %} 
+{% endblock %}
+

@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block body %}
+
+<h1>Choose Your Destination: </h1>
+
+
+
+<div id='list-destionations'>
+    <label for="users">Choose a Traveller: </label>
+
+    <select name="user" id="user">
+        <option value=""option>
+            {% for user in users %}
+            <option value={{ user.id }}>{{ user.name }}</option>      
+            {% endfor %}
+    </select>
+</div>
+
+{% endblock %}

@@ -25,6 +25,7 @@ CREATE TABLE cities (
 
 CREATE TABLE destinations (
     id SERIAL PRIMARY KEY,
+    visited BOOLEAN,
     user_id INT REFERENCES users(id) ON DELETE CASCADE,
     city_id INT REFERENCES cities(id) ON DELETE CASCADE,
     country_id INT REFERENCES countries(id) ON DELETE CASCADE

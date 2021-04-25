@@ -41,4 +41,3 @@ city_repository.save(city3)
 destination1 = Destination(user1, country1, city1)
 destination_repository.save(destination1)
 
-print(city_repository.select(1).country)

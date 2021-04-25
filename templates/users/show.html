@@ -12,9 +12,13 @@
 {% for destination in destinations %}  
 <div>
   <p id='list-all-destinations'>
+    {% if destination.user.name == user.name %}
+      
     <b>{{ destination.country.name }},</b>
     <b>{{ destination.city.name }},</b>
     <b>{{ destination.visited }}</b>
+
+    {% endif %}
   </p>
 </div>
 {% endfor %} 

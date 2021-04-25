@@ -37,7 +37,5 @@ city_repository.save(city2)
 city3 = City('Buenos Aires', country3)
 city_repository.save(city3)
 
-
-destination1 = Destination(user1, country1, city1)
-destination_repository.save(destination1)
-
+destination = Destination(user1, country2, city2, True)
+destination_repository.save(destination)

@@ -1,5 +1,9 @@
 from db.run_sql import run_sql
+from models.destination import Destination
 from models.user import User
+from models.country import Country
+from models.city import City
+from repositories import user_repository, city_repository, country_repository
 
 def save(user):
     sql = "INSERT INTO users (name, home_city, home_country) VALUES (%s, %s, %s) RETURNING id"
@@ -36,3 +40,16 @@ def delete(id):
     sql = "DELETE FROM users WHERE id = %s"
     values = [id]
     run_sql(sql, values)
+
+def destinations(user):
+    destinations = []
+
+    sql = "SELECT countries.name, cities.name, users.name FROM countries INNER JOIN destinations ON destinations.country_id = countries.id INNER JOIN cities ON cities.country_id = countries.id INNER JOIN users ON destinations.user_id = users.id WHERE destinations.user_id = %s"
+    values = [user.id]
+    results = run_sql(sql, values)
+
+    for row in results:
+        destination = Destination(row['user'], row['country'], row['city'], row['visited'], row['id'])
+        destinations.append(destination)
+    return destinations
+   

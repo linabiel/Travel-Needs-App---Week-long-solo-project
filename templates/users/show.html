@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block body %}
+
+<h1>Traveller: {{ user.name }} </h1>
+
+
+{% for destination in destinations %}  
+<div>
+  <p id='list-all-destinations'>
+    <b>{{ destination.country.name }},</b>
+    <b>{{ destination.city.name }},</b>
+    <b>{{ destination.visited }}</b>
+  </p>
+</div>
+{% endfor %} 
+
+{% endblock %}

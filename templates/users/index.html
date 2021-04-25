@@ -12,8 +12,9 @@
 {% for user in users %}  
 <div>
   <p id='list-users'>
-    {{ user.name }}: <b>{{ user.home_city }},</b>
-                        <b>{{ user.home_country }},</b>
+    <a href="/users/{{ user.id }}"> {{user.name}}: </a>
+        <b>{{ user.home_city }},</b>
+        <b>{{ user.home_country }}</b>
   </p>
 </div>
 {% endfor %} 

@@ -1,17 +1,14 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
 {% block body %}
 
-<h1>Places You Have Visited: </h1>
-<h2>{{new_destination}}</h2>
+<h1>Travellers: </h1>
 
-{% for destination in destinations %}  
+
+{% for user in users %}  
 <div>
-  <p id='list-all-destinations'>    
-    <b>{{ destination.user.name }},</b>
-    <b>{{ destination.country.name }},</b>
-    <b>{{ destination.city.name }},</b>
-    <b>{{ destination.visited }}</b>
+  <p id='list-users'>
+    <a href="/visits/{{ user.id }}"> {{user.name}}: </a>
   </p>
 </div>
-
+{% endfor %} 
 {% endblock %}

@@ -31,11 +31,15 @@ country_repository.save(country3)
 city1 = City('Berlin', country1)
 city_repository.save(city1)
 
+
 city2 = City('Paris', country2)
 city_repository.save(city2)
 
 city3 = City('Buenos Aires', country3)
 city_repository.save(city3)
+
+city4 = City('Frankfurt', country1)
+city_repository.save(city1)
 
 destination = Destination(user1, country1, city1, True)
 destination_repository.save(destination)

@@ -2,7 +2,7 @@
 {% block body %}
 
 <form action="/destinations/{{destination.id}}" method="post">
-    <div>
+    <!-- <div>
       <label for="user">Traveller:</label>
       <input type="text" id="user" name="user" value="{{user.name}}" required autofocus>
     </div>
@@ -14,7 +14,7 @@
       <label for="city">City:</label>
       <input type="city" id="city" name="city" value="{{city.name}}" required>
     </div>
-    <div>
+    <div> -->
       <label for="visited">Visited:</label>
       <select id="visited" name="visited">
         <option value="true"
@@ -24,6 +24,6 @@
       </select>
     </div>
 
-    <button type="submit">Update Destination</button>
+    <input type='submit' value="UPDATE"><a href="/destinations"></a></input>
   </form>
   {% endblock %}

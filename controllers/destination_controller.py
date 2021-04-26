@@ -55,7 +55,7 @@ def edit_destination(id):
 
 # UPDATE
 @destinations_blueprint.route('/destinations/<id>', methods=['POST'])
-def update_destination(id):
+def update_destination_get(id):
     visited = request.form['visited']
     destination = destination_repository.select(id)
     destination.visited = visited

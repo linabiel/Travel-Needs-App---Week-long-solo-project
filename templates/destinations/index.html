@@ -44,8 +44,12 @@
     <input type='submit' value="ADD"><a href="/destinations"></a></input>
 </form>
 
+
+
+
+
+
 <h1>Places You Want To Visit: </h1>
-<h2>{{new_destination}}</h2>
 
 {% for destination in destinations %}  
 <div>
@@ -53,7 +57,12 @@
     <b>{{ destination.user.name }},</b>
     <b>{{ destination.country.name }},</b>
     <b>{{ destination.city.name }},</b>
-    <b>{{ destination.visited }}</b>
+    <b>
+        {% if destination.visited == True %}
+            <span style='font-size:30px;'>&#10003;</span></b>         
+        {% else %}
+            <span style='font-size:30px;'>&#10005;</span>
+        {% endif %}
     <button><a href="/destinations/{{destination.id}}/edit">Edit</a></button>
   </p>
 </div>

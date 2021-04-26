@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block body %}
+
+{% for destination in destinations %}
+    {{ destination.user.name }}
+    {{ destination.country.name }}
+    {{ destination.city.name }}
+    {% if destination.visited == True %}
+            <span style='font-size:30px;'>&#10003;</span></b>         
+        {% else %}
+            <span style='font-size:30px;'>&#10005;</span>
+        {% endif %}
+{% endfor %}
+
+{% endblock %}

@@ -11,7 +11,11 @@
       
     <b>{{ destination.country.name }},</b>
     <b>{{ destination.city.name }},</b>
-    <b>{{ destination.visited }}</b>
+    {% if destination.visited == True %}
+    	<span style='font-size:30px;'>&#10003;</span></b>         
+    {% else %}
+    	<span style='font-size:30px;'>&#10005;</span>
+	{% endif %}
 
     {% endif %}
   </p>

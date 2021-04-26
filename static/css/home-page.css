@@ -11,11 +11,16 @@ body {
 #page-container {
     position: relative;
     min-height: 100vh;
-  }
+}
 
-  #content-wrap {
+#content-wrap {
+    /* display: flex;
+    justify-content: center; */
+    text-align: center;
+    padding: 100px;
+    font-size: xx-large;
     padding-bottom: 2.5rem;    /* Footer height */
-  }
+}
 
 .nav-bar {
     display: flex;
@@ -76,3 +81,57 @@ footer {
     height: 2.5rem;
 }
 
+/* users */
+.list-of-users {
+    padding: 15px;
+    background-color: linen;
+    border: white;
+    color:white;
+    padding: 8px 40px;
+    border-radius: 10px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    appearance: none;
+    box-sizing: unset;
+    opacity: 0.8;
+
+}
+
+
+/* destinations */
+.destination-form label{
+    font-size: medium;
+}
+
+.add-destination-form {
+    /* width: 100%; */
+
+}
+
+input[type="submit"], input [type='text'], button {
+    background-color: turquoise;
+    border: white;
+    color:white;
+    padding: 8px 40px;
+    border-radius: 10px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+a {
+    font-size: medium;
+    text-decoration: none;
+    color:dimgray;
+    display: flex;
+    flex-direction: row;
+}
+
+b {
+    font-size: medium;
+    text-decoration: none;
+    color:dimgray;
+    display: flex;
+    flex-direction: row-reverse;
+}

@@ -64,12 +64,21 @@ def edit_destination(id):
     return render_template('destinations/edit.html', user=destination.user, country=destination.country, city=destination.city, destination=destination)
 
 # UPDATE
-
-
 @destinations_blueprint.route('/destinations/<id>', methods=['POST'])
 def update_destination_get(id):
     visited = request.form['visited']
     destination = destination_repository.select(id)
     destination.visited = visited
     destination_repository.update(destination)
+    return redirect('/destinations')
+
+# DELETE
+@destinations_blueprint.route('/destinations/<id>/delete')
+def delete_task_get(id):
+    destination_repository.delete(id)
+    return redirect('/destinations')
+
+@destinations_blueprint.route('/destinations/<id>/delete', methods=['POST'])
+def delete_task(id):
+    destination_repository.delete(id)
     return redirect('/destinations')

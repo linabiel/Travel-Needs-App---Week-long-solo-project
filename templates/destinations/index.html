@@ -4,7 +4,7 @@
 <h1>Choose Your Destination: </h1>
 
 
-<form class="add-destination-form" action="/destinations" method="post">
+<form class="destination-form" action="/destinations" method="post">
     <label for="user">Choose a Traveller: </label>
     <select name="user" id="user">
         <option value=""></option>
@@ -29,7 +29,7 @@
             {% endfor %}
     </select>
 
-    <input type='submit' value="ADD"><a href="/destinations"></a></input>
+    <input type='submit' value="ADD" a href="/destinations"></a></input>
 </form>
 
 
@@ -53,8 +53,10 @@
             <span style='font-size:30px;'>&#10005;</span>
         {% endif %}
     <button><a href="/destinations/{{destination.id}}/edit">Edit</a></button>
+    <button><a href="/destinations/{{destination.id}}/delete">Delete</a></button>
   </p>
 </div>
+
 {% endfor %} 
 
 

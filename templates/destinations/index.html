@@ -41,20 +41,20 @@
 <h1>Places You Want To Visit: </h1>
 
 {% for destination in destinations %}  
-<div>
-  <p id='list-all-destinations'>    
-    <b>{{ destination.user.name }},</b>
-    <b>{{ destination.country.name }},</b>
-    <b>{{ destination.city.name }},</b>
-    <b>
-        {% if destination.visited == True %}
-            <span style='font-size:30px;'>&#10003;</span></b>         
-        {% else %}
-            <span style='font-size:30px;'>&#10005;</span>
-        {% endif %}
-    <button><a href="/destinations/{{destination.id}}/edit">Edit</a></button>
-    <button><a href="/destinations/{{destination.id}}/delete">Delete</a></button>
-  </p>
+<div class="places-to-visit">
+    <b class="users-destinations-list">
+   {{ destination.user.name }},
+   {{ destination.country.name }},
+   {{ destination.city.name }}
+    {% if destination.visited == True %}
+    </b>
+        <b class="users-destinations-list"><span style='font-size:16px;'>&#10003;</span></b>
+    {% else %}
+    </b>
+        <b class="users-destinations-list"><span style='font-size:16px;'>&#10005;</span></b>
+    {% endif %}
+    <button class="user-button"><a class="user-button-url" href="/destinations/{{destination.id}}/edit">Edit</a></button>
+    <button class="user-button"><a class="user-button-url" href="/destinations/{{destination.id}}/delete">Delete</a></button>
 </div>
 
 {% endfor %} 

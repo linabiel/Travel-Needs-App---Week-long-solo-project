@@ -110,7 +110,7 @@ footer {
 }
 
 input[type="submit"], input [type='text'], button {
-    background-color: turquoise;
+    background-color: grey;
     border: white;
     color:white;
     padding: 8px 40px;
@@ -123,15 +123,48 @@ input[type="submit"], input [type='text'], button {
 a {
     font-size: medium;
     text-decoration: none;
-    color:dimgray;
-    display: flex;
-    flex-direction: row;
+    color:white;
+    /* display: flex;
+    flex-direction: row; */
 }
 
 b {
     font-size: medium;
     text-decoration: none;
-    color:dimgray;
-    display: flex;
-    flex-direction: row-reverse;
+    display: block;
+    /* flex-direction: row;
+    flex-direction: column; */
+}
+
+.users-destinations-list {
+    padding: 15px;
+    color:black;
+    padding: 8px 40px;
+    border-radius: 15px;
+    margin: 4px 2px;
+    opacity: 0.8;
+    justify-content: space-evenly;}
+
+.places-to-visit {
+    background-color: linen;
+    color:black;
+    padding: 8px 8px;
+    border-radius: 10px;
+    text-decoration: none;
+    margin: 4px 2px;
+    opacity: 0.8;
+    font-size: medium;
+    text-decoration: none;
+    column-count: 3;
+    text-align: center;
+}
+
+user-button {
+    cursor: pointer;
+    color: white;
+
+}
+
+user-button-url {
+    color: white;
 }

@@ -1,21 +1,17 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 {% block body %}
 
-<h1>Traveller: {{ user.name }} </h1>
-
+<h1>Places You Have Visited: </h1>
+<h2>{{new_destination}}</h2>
 
 {% for destination in destinations %}  
 <div>
-  <p id='list-all-destinations'>
-    {% if destination.user.name == user.name %}
-      
+  <p id='list-all-destinations'>    
+    <b>{{ destination.user.name }},</b>
     <b>{{ destination.country.name }},</b>
     <b>{{ destination.city.name }},</b>
     <b>{{ destination.visited }}</b>
-
-    {% endif %}
   </p>
 </div>
-{% endfor %} 
 
 {% endblock %}

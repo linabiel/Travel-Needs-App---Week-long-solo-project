@@ -11,5 +11,5 @@ visits_blueprint = Blueprint("visits", __name__)
 
 @visits_blueprint.route("/visits")
 def visits():
-    # visits = user_repository.select_all()
-    return render_template('users/index.html')
+    # visits = destination_repository.select_all()
+    return render_template('visits/index.html', visits=visits)

@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block body %}
+
+<form action="/destinations/{{destination.id}}" method="post">
+    <div>
+      <label for="user">Traveller:</label>
+      <input type="text" id="user" name="user" value="{{user.name}}" required autofocus>
+    </div>
+    <div>
+      <label for="country">Country:</label>
+      <input type="text" id="country" name="country" value="{{country.name}}" required autofocus>
+    </div>
+    <div>
+      <label for="city">City:</label>
+      <input type="city" id="city" name="city" value="{{city.name}}" required>
+    </div>
+    <div>
+      <label for="visited">Visited:</label>
+      <select id="visited" name="visited">
+        <option value="true"
+          { % if destination.visited == True % } selected="selected" { % endif % }>Yes</option>
+        <option value="false"
+          { % if destination.visited == False % } selected="selected" { % endif % }>No</option>
+      </select>
+    </div>
+
+    <button type="submit">Update Destination</button>
+  </form>
+  {% endblock %}

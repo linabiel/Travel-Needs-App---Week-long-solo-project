@@ -17,6 +17,4 @@ def users():
 
 @visits_blueprint.route("/visits/<id>")
 def show(id):
-    user = user_repository.select(id)
-    destinations = destination_repository.select_all()
-    return render_template("visits/show.html", user=user, destinations=destinations)
+    return redirect('/users/show.html')

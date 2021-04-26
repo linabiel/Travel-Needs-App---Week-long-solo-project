@@ -12,6 +12,8 @@ destinations_blueprint = Blueprint("destinations", __name__)
 # NEW
 # GET '/destinations'
 # Returns an html form to the browser at the /destinations
+
+
 @destinations_blueprint.route("/destinations")
 def destinations():
     users = user_repository.select_all()
@@ -23,37 +25,47 @@ def destinations():
 # CREATE
 # POST '/destinations'
 # Recieves the data that we sent from the form to insert into the database
+
+
 @destinations_blueprint.route('/destinations', methods=['POST'])
-def add_destination():
+def select_destination():
     user_id = request.form['user']
+    country_id = request.form['country']
+    city_id = request.form['city']
+
+    user = user_repository.select(user_id)
+    country = country_repository.select(country_id)
+    city = city_repository.select(city_id)
+    destination = Destination(user, country, city)
+    destination_repository.save(destination)
+    return redirect('/destinations')
+
+
+@destinations_blueprint.route('/destinations/add')
+def add_destination_get():
+    return render_template('destinations/add.html')
+
+@destinations_blueprint.route('/destinations/add', methods=['POST'])
+def add_destination():
     country_name = request.form['country']
     city_name = request.form['city']
 
-    # For drop down menu
-    user = user_repository.select(user_id)
-    # country = country_repository.select(country_id)
-    # country_repository.save(country)
-    # city = city_repository.select(city_id)
-    # city_repository.save(city)
+    country = Country(country_name)
+    country = country_repository.save(country)
 
-    new_country = Country(country_name)
-    country_id = country_repository.save(new_country)
+    new_city = City(city_name, country)
+    city_repository.save(new_city)
+    return render_template('destinations/add.html')
 
-
-    new_city = City(city_name, country_id)
-    city_id = city_repository.save(new_city)
-
-    new_destination = Destination(user, country_id, city_id)
-    destination_repository.save(new_destination)
-    return redirect('/destinations')
-
-# EDIT 
+# EDIT
 @destinations_blueprint.route('/destinations/<id>/edit')
 def edit_destination(id):
     destination = destination_repository.select(id)
     return render_template('destinations/edit.html', user=destination.user, country=destination.country, city=destination.city, destination=destination)
 
 # UPDATE
+
+
 @destinations_blueprint.route('/destinations/<id>', methods=['POST'])
 def update_destination_get(id):
     visited = request.form['visited']

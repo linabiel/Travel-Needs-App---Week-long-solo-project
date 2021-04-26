@@ -67,6 +67,11 @@ h1 {
     font-size: 40px;
 }
 
+h2, h3 {
+    font-size: 20px;
+    padding: 20px;
+}
+
 footer {
     display: flex;
     align-items: center;
@@ -81,12 +86,11 @@ footer {
     height: 2.5rem;
 }
 
-/* users */
+/* USERSusersusersusersusersusersusersusersusersusersusersusersusersusersusersusersusersusersusers */
 .list-of-users {
     padding: 15px;
     background-color: linen;
-    border: white;
-    color:white;
+    color:black;
     padding: 8px 40px;
     border-radius: 10px;
     text-decoration: none;
@@ -95,21 +99,25 @@ footer {
     appearance: none;
     box-sizing: unset;
     opacity: 0.8;
-
 }
 
-
-/* destinations */
+/* DESTINATIONSdestinationsdestinationsdestinationsdestinationsdestinationsdestinationsdestinations */
 .destination-form label{
     font-size: medium;
+    background-color: linen;
+    color:black;
+    padding: 8px 8px;
+    border-radius: 10px;
+    opacity: 0.8;
 }
 
 .add-destination-form {
     /* width: 100%; */
+    font-size: 20px;
 
 }
 
-input[type="submit"], input [type='text'], button {
+input[type="submit"], button {
     background-color: grey;
     border: white;
     color:white;
@@ -167,4 +175,39 @@ user-button {
 
 user-button-url {
     color: white;
+}
+
+/* ADD A DESTINATION ADD A DESTINATION ADD A DESTINATION ADD A DESTINATION ADD A DESTINATION ADD A DESTINATION */
+
+select {
+
+}
+
+input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 15px 0;
+    box-sizing: border-box;
+    border: 2px solid dimgray;
+    border-radius: 4px;
+}
+
+.dest-field {
+    display: flex;
+    justify-content: righ;
+}
+
+#dest-add-button {
+    background-color: linen;
+    border: white;
+    color:black;
+    padding: 8px 40px;
+    border-radius: 10px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    width: 10%;
+    display: flex;
+    justify-content: righ;
+    opacity: 0.8;
 }

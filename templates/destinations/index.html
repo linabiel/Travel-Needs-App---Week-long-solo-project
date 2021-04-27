@@ -27,7 +27,7 @@
         {% for city in cities %}
         {% for country in countries %}
         {% if country.id == city.country.id %} 
-        <option value="{{ city.id }}">{{ country.name }}, {{ city.name }}</option>   
+        <option value="{{city.id}}">{{ country.name }}, {{ city.name }}</option>   
         {% endif %}   
         {% endfor %}
         {% endfor %}

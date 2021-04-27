@@ -87,7 +87,7 @@ footer {
 }
 
 /* USERSusersusersusersusersusersusersusersusersusersusersusersusersusersusersusersusersusersusers */
-.list-of-users {
+.list-of-users, #list-all-destinations, #list-users {
     padding: 15px;
     background-color: linen;
     color:black;
@@ -96,7 +96,6 @@ footer {
     text-decoration: none;
     margin: 4px 2px;
     cursor: pointer;
-    appearance: none;
     box-sizing: unset;
     opacity: 0.8;
 }
@@ -131,7 +130,7 @@ input[type="submit"], button {
 a {
     font-size: medium;
     text-decoration: none;
-    color:white;
+    color:black;
     /* display: flex;
     flex-direction: row; */
 }
@@ -178,11 +177,6 @@ user-button-url {
 }
 
 /* ADD A DESTINATION ADD A DESTINATION ADD A DESTINATION ADD A DESTINATION ADD A DESTINATION ADD A DESTINATION */
-
-select {
-
-}
-
 input {
     width: 100%;
     padding: 12px 20px;
@@ -210,4 +204,21 @@ input {
     justify-content: center;
     opacity: 0.8;
     text-align: center;
+}
+
+#span {
+    font-size: medium;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    margin: 15px 0;
+    box-sizing: border-box;
+    background-color: linen;
+    border-radius: 10px;
+    margin: 4px 2px;
+    color: black;
+    opacity: 0.8;
+
+ {
+
 }

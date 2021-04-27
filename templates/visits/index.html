@@ -3,13 +3,11 @@
 
 <h1>Travellers: </h1>
 
-
 {% for user in users %}  
 <div>
-  <p id='list-users'>
-    <a href="/users/{{ user.id }}"> {{user.name}}: </a>
-
-  </p>
+  <b id='list-users'>
+    <a href="/visits/{{ user.id }}"> {{user.name}} </a>
+  </b>
 </div>
 {% endfor %} 
 {% endblock %}

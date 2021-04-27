@@ -6,15 +6,13 @@
 
 {% for destination in destinations %}  
 <div>
-  <p id='list-all-destinations'>
-    {% if destination.user.name == user.name and destination.visited == True%}
-        
-    <b>{{ destination.country.name }},</b>
-    <b>{{ destination.city.name }},</b>
-    <b>{{ destination.visited }}</b>
+    {% if destination.user.name == user.name and destination.visited == True %}
+      
+    <b id='list-all-destinations'>{{ destination.country.name }},</b>
+    <b id='list-all-destinations'>{{ destination.city.name }},</b>
+    <span id='span' style='font-size:30px;'>&#10003;</span>
 
     {% endif %}
-  </p>
 </div>
 {% endfor %} 
 

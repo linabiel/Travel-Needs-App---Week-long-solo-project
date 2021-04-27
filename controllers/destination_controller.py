@@ -26,13 +26,10 @@ def destinations():
 @destinations_blueprint.route('/destinations', methods=['POST'])
 def select_destination():
     user_id = request.form['user']
-    country_id_city_id = request.form['country', 'city']
-    # city_id = request.form['city']
-
+    city_id = request.form['city']
     user = user_repository.select(user_id)
-    country = country_repository.select(country_id)
     city = city_repository.select(city_id)
-    destination = Destination(user, country, city)
+    destination = Destination(user, city.country, city)
     destination_repository.save(destination)
     return redirect('/destinations')
 
@@ -48,14 +45,15 @@ def add_destination():
     country_name = request.form['country']
     city_name = request.form['city']
 
-    country = Country(country_name)
     countries = country_repository.select_all()
-    does_country_exist = False
-    for country in countries:
-        if country.name == country_name:
-            does_country_exist = True
-    if not does_country_exist:
+    country = None
+    for country_db in countries:
+        if country_db.name == country_name:
+            country = country_db
+    if country == None:
+        country = Country(country_name)
         country_repository.save(country)
+    
 
     new_city = City(city_name, country)
     cities = city_repository.select_all()
@@ -65,7 +63,8 @@ def add_destination():
             does_city_exists = True
     if not does_city_exists:
         city_repository.save(new_city)
-    return render_template('destinations/add.html')
+    # return render_template('destinations/add.html')
+    return redirect('/destinations')
 
 # EDIT
 @destinations_blueprint.route('/destinations/<id>/edit')

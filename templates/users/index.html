@@ -3,12 +3,13 @@
 
 <h1>Travellers: </h1>
 
-
 {% for user in users %}  
-<div class='list-of-users'>
+<div>
+    <b id='list-users'>
     <a href="/users/{{ user.id }}"> {{user.name}}: </a>
-        <b>{{ user.home_city }},</b>
-        <b>{{ user.home_country }}</b>
+        {{ user.home_city }},
+        {{ user.home_country }}
+    </b>
 </div>
 {% endfor %} 
 {% endblock %}

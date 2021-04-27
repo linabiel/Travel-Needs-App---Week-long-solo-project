@@ -59,7 +59,7 @@ body {
     /* display: flex;
     justify-content: center; */
     text-align: center;
-    padding: 100px;
+    padding: 60px;
     font-size: xx-large;
 }
 
@@ -194,7 +194,6 @@ input {
 
 .dest-field {
     display: flex;
-    justify-content: righ;
 }
 
 #dest-add-button {
@@ -208,6 +207,7 @@ input {
     cursor: pointer;
     width: 10%;
     display: flex;
-    justify-content: righ;
+    justify-content: center;
     opacity: 0.8;
+    text-align: center;
 }

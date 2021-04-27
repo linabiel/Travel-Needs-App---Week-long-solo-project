@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block body %}
 
-<h1>Add a Destination: </h1>
+<h1>Add a Country and a City: </h1>
 
 
 <form class="add-destination-form" action="/destinations/add" method="post">
@@ -11,7 +11,7 @@
 
     <label class="dest-field" for="city"> City: </label>
     <input type="text" id='city' name='city' placeholder="City" required autofocus>
-
+    
     <input id="dest-add-button" type='submit' value="ADD"><a href="/destinations/add"></a></input>
 </form>
 

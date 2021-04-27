@@ -13,20 +13,24 @@
             {% endfor %}
     </select>
 
-    <label for="country">Choose a Country: </label>
+    <!-- <label for="country">Choose a Country: </label>
     <select name="country" id="country">
         <option value=""></option>
         {% for country in countries %}
         <option value="{{ country.id }}">{{ country.name }}</option>   
             {% endfor %}
-    </select>
+    </select> -->
 
     <label for="city">Choose a City: </label>
     <select name="city" id="city">
         <option value=""></option>
         {% for city in cities %}
-        <option value="{{ city.id }}">{{ city.name }}</option>   
-            {% endfor %}
+        {% for country in countries %}
+        {% if country.id == city.country.id %} 
+        <option value="{{ city.id }}">{{ country.name }}, {{ city.name }}</option>   
+        {% endif %}   
+        {% endfor %}
+        {% endfor %}
     </select>
 
     <input type='submit' value="ADD" a href="/destinations"></a></input>

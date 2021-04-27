@@ -12,8 +12,6 @@ destinations_blueprint = Blueprint("destinations", __name__)
 # NEW
 # GET '/destinations'
 # Returns an html form to the browser at the /destinations
-
-
 @destinations_blueprint.route("/destinations")
 def destinations():
     users = user_repository.select_all()
@@ -23,15 +21,13 @@ def destinations():
     return render_template('destinations/index.html', users=users, countries=countries, cities=cities, destinations=destinations)
 
 # CREATE
-# POST '/destinations'
+# ADDS a destination useing a drop down menu
 # Recieves the data that we sent from the form to insert into the database
-
-
 @destinations_blueprint.route('/destinations', methods=['POST'])
 def select_destination():
     user_id = request.form['user']
-    country_id = request.form['country']
-    city_id = request.form['city']
+    country_id_city_id = request.form['country', 'city']
+    # city_id = request.form['city']
 
     user = user_repository.select(user_id)
     country = country_repository.select(country_id)
@@ -40,21 +36,35 @@ def select_destination():
     destination_repository.save(destination)
     return redirect('/destinations')
 
-
+# GET for '/destinations/add'
 @destinations_blueprint.route('/destinations/add')
 def add_destination_get():
     return render_template('destinations/add.html')
 
+# CREATE
+# ADDS a destination with a name typed in
 @destinations_blueprint.route('/destinations/add', methods=['POST'])
 def add_destination():
     country_name = request.form['country']
     city_name = request.form['city']
 
     country = Country(country_name)
-    country = country_repository.save(country)
+    countries = country_repository.select_all()
+    does_country_exist = False
+    for country in countries:
+        if country.name == country_name:
+            does_country_exist = True
+    if not does_country_exist:
+        country_repository.save(country)
 
     new_city = City(city_name, country)
-    city_repository.save(new_city)
+    cities = city_repository.select_all()
+    does_city_exists = False
+    for city in cities:
+        if city.name == city_name:
+            does_city_exists = True
+    if not does_city_exists:
+        city_repository.save(new_city)
     return render_template('destinations/add.html')
 
 # EDIT

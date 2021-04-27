@@ -7,15 +7,11 @@
 {% for destination in destinations %}  
 <div>
   <p id='list-all-destinations'>
-    {% if destination.user.name == user.name %}
+    {% if destination.user.name == user.name and destination.visited == False %}
       
     <b>{{ destination.country.name }},</b>
     <b>{{ destination.city.name }},</b>
-    {% if destination.visited == True %}
-    	<span style='font-size:30px;'>&#10003;</span></b>         
-    {% else %}
-    	<span style='font-size:30px;'>&#10005;</span>
-	{% endif %}
+    <span style='font-size:30px;'>&#10005;</span>
 
     {% endif %}
   </p>

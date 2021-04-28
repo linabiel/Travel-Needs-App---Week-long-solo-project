@@ -101,13 +101,24 @@ footer {
 }
 
 /* DESTINATIONSdestinationsdestinationsdestinationsdestinationsdestinationsdestinationsdestinations */
-.destination-form label{
+.destination-form {
     font-size: medium;
-    background-color: linen;
+    background-color: ghostwhite;
     color:black;
     padding: 8px 8px;
     border-radius: 10px;
     opacity: 0.8;
+}
+#visited-form {
+    background-color: ghostwhite;
+    color:black;
+    padding: 8px 8px;
+    border-radius: 10px;
+    opacity: 0.8;
+}
+
+#visited-form-button {
+    background-color: lightgray;
 }
 
 .add-destination-form {
@@ -117,14 +128,15 @@ footer {
 }
 
 input[type="submit"], button {
-    background-color: grey;
+    background-color: lightgray;
     border: white;
-    color:white;
+    color:black;
     padding: 8px 40px;
     border-radius: 10px;
     text-decoration: none;
     margin: 4px 2px;
     cursor: pointer;
+    margin: 10px;
 }
 
 a {
@@ -143,6 +155,34 @@ b {
     flex-direction: column; */
 }
 
+label {
+    padding: 20px;
+}
+
+select {
+    width: 70%;
+    background-color: grey;
+    color: white;
+    padding: 8px 16px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    border-radius: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#user, #city {
+    width: 100%;
+    background-color: grey;
+    color: white;
+    padding: 8px 16px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    border-radius: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
 .users-destinations-list {
     padding: 15px;
     color:black;
@@ -150,7 +190,8 @@ b {
     border-radius: 15px;
     margin: 4px 2px;
     opacity: 0.8;
-    justify-content: space-evenly;}
+    justify-content: space-evenly;
+}
 
 .places-to-visit {
     background-color: linen;
@@ -177,15 +218,6 @@ user-button-url {
 }
 
 /* ADD A DESTINATION ADD A DESTINATION ADD A DESTINATION ADD A DESTINATION ADD A DESTINATION ADD A DESTINATION */
-input {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 15px 0;
-    box-sizing: border-box;
-    border: 2px solid dimgray;
-    border-radius: 4px;
-}
-
 .dest-field {
     display: flex;
 }
@@ -218,7 +250,4 @@ input {
     margin: 4px 2px;
     color: black;
     opacity: 0.8;
-
- {
-
 }

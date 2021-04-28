@@ -1,17 +1,16 @@
 {% extends "base.html" %}
 {% block body %}
 
-<form action="/destinations/{{destination.id}}" method="post">
+<form  id="visited-form" action="/destinations/{{destination.id}}" method="post">
+  <label for="visited">Visited:</label>
+    <select id="visited" name="visited">
+      <option value="true"
+        { % if destination.visited == True % } selected="selected" { % endif % }>Yes</option>
+      <option value="false"
+        { % if destination.visited == False % } selected="selected" { % endif % }>No</option>
+    </select>
 
-      <label for="visited">Visited:</label>
-      <select id="visited" name="visited">
-        <option value="true"
-          { % if destination.visited == True % } selected="selected" { % endif % }>Yes</option>
-        <option value="false"
-          { % if destination.visited == False % } selected="selected" { % endif % }>No</option>
-      </select>
-    </div>
+  <input  id="visited-form-button" type='submit' value="UPDATE"><a href="/destinations"></a></input>
+</form>
 
-    <input type='submit' value="UPDATE"><a href="/destinations"></a></input>
-  </form>
-  {% endblock %}
+{% endblock %}

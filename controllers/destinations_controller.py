@@ -1,12 +1,11 @@
 from flask import Blueprint
-from flask import Flask, render_template, request, redirect
-from repositories import user_repository, city_repository, country_repository, destination_repository
-from models.user import User
+from flask import render_template, request, redirect
+
 from models.city import City
 from models.country import Country
 from models.destination import Destination
+from repositories import user_repository, city_repository, country_repository, destination_repository
 
-# Creates a new instance of Blueprint called destination
 destinations_blueprint = Blueprint("destinations", __name__)
 
 # NEW
@@ -18,11 +17,12 @@ def destinations():
     countries = country_repository.select_all()
     cities = city_repository.select_all()
     destinations = destination_repository.select_all()
-    return render_template('destinations/index.html', users=users, countries=countries, cities=cities, destinations=destinations)
+    return render_template('destinations/index.html', users=users, countries=countries, cities=cities,
+                           destinations=destinations)
 
 # CREATE
-# ADDS a destination useing a drop down menu
-# Recieves the data that we sent from the form to insert into the database
+# ADDS a destination using a drop down menu
+# Receives the data that we sent from the form to insert into the database
 @destinations_blueprint.route('/destinations', methods=['POST'])
 def select_destination():
     user_id = request.form['user']
@@ -50,12 +50,11 @@ def add_destination():
     for country_db in countries:
         if country_db.name == country_name:
             country = country_db
-    if country == None:
+    if country is None:
         country = Country(country_name)
         country_repository.save(country)
-    
 
-    new_city = City(city_name, country) # variable country comes from city class
+    new_city = City(city_name, country)  # variable country comes from city class
     cities = city_repository.select_all()
     does_city_exists = False
     for city in cities:
@@ -69,7 +68,8 @@ def add_destination():
 @destinations_blueprint.route('/destinations/<id>/edit')
 def edit_destination(id):
     destination = destination_repository.select(id)
-    return render_template('destinations/edit.html', user=destination.user, country=destination.country, city=destination.city, destination=destination)
+    return render_template('destinations/edit.html', user=destination.user, country=destination.country,
+                           city=destination.city, destination=destination)
 
 # UPDATE
 @destinations_blueprint.route('/destinations/<id>', methods=['POST'])

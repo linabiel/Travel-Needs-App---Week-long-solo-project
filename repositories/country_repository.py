@@ -30,7 +30,7 @@ def select(id):
     result = run_sql(sql, values)[0]
 
     if result is not None:
-        country = Country(result['name'], result['id'] )
+        country = Country(result['name'], result['id'])
     return country
 
 def delete(id):

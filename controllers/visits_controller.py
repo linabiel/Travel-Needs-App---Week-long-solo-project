@@ -1,12 +1,8 @@
 from flask import Blueprint
-from flask import Flask, render_template, request, redirect
-from repositories import user_repository, city_repository, country_repository, destination_repository
-from models.user import User
-from models.city import City
-from models.country import Country
-from models.destination import Destination
+from flask import render_template
 
-# Creates a new instance of Blueprint called visits
+from repositories import user_repository, destination_repository
+
 visits_blueprint = Blueprint("visits", __name__)
 
 @visits_blueprint.route("/visits")

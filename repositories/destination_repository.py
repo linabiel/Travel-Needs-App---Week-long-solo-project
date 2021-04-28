@@ -1,10 +1,6 @@
 from db.run_sql import run_sql
 from models.destination import Destination
-from models.user import User
-from models.country import Country
-from models.city import City
 from repositories import user_repository, city_repository, country_repository
-
 
 def save(destination):
     sql = "INSERT INTO destinations (user_id, country_id, city_id, visited) VALUES (%s, %s, %s, %s) RETURNING *"
@@ -12,7 +8,6 @@ def save(destination):
     results = run_sql(sql, values)
     destination.id = results[0]['id']
     return destination
-
 
 def select_all():
     destinations = []
@@ -28,7 +23,6 @@ def select_all():
         destinations.append(destination)
     return destinations
 
-
 def select(id):
     destination = None
     sql = "SELECT * FROM destinations WHERE id = %s"
@@ -43,17 +37,14 @@ def select(id):
             user, country, city, result['visited'], result['id'])
     return destination
 
-
 def delete(id):
     sql = "DELETE FROM destinations WHERE id = %s"
     values = [id]
     run_sql(sql, values)
 
-
 def delete_all():
     sql = "DELETE FROM destinations"
     run_sql(sql)
-
 
 def update(destination):
     sql = "UPDATE destinations SET visited = %s WHERE id = %s"

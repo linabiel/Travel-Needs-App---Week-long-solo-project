@@ -1,8 +1,8 @@
 from flask import Flask, render_template
 
-from controllers.visit_controller import visits_blueprint
-from controllers.destination_controller import destinations_blueprint
-from controllers.user_controller import users_blueprint
+from controllers.visits_controller import visits_blueprint
+from controllers.destinations_controller import destinations_blueprint
+from controllers.users_controller import users_blueprint
 
 app = Flask(__name__)
 

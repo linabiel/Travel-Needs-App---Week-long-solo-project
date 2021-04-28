@@ -171,9 +171,10 @@ select {
     margin-bottom: 10px;
 }
 
-#user, #city {
+#user, #city, #country {
     width: 100%;
     background-color: grey;
+    opacity: 0.8;
     color: white;
     padding: 8px 16px;
     border: 1px solid transparent;

@@ -55,7 +55,7 @@ def add_destination():
         country_repository.save(country)
     
 
-    new_city = City(city_name, country)
+    new_city = City(city_name, country) # variable country comes from city class
     cities = city_repository.select_all()
     does_city_exists = False
     for city in cities:
@@ -63,7 +63,6 @@ def add_destination():
             does_city_exists = True
     if not does_city_exists:
         city_repository.save(new_city)
-    # return render_template('destinations/add.html')
     return redirect('/destinations')
 
 # EDIT

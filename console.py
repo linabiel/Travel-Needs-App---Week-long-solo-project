@@ -25,7 +25,7 @@ country_repository.save(country1)
 country2 = Country('France')
 country_repository.save(country2)
 
-country3 = Country('Argentina')
+country3 = Country('Estonia')
 country_repository.save(country3)
 
 city1 = City('Berlin', country1)
@@ -34,7 +34,7 @@ city_repository.save(city1)
 city2 = City('Paris', country2)
 city_repository.save(city2)
 
-city3 = City('Buenos Aires', country3)
+city3 = City('Tallinn', country3)
 city_repository.save(city3)
 
 city4 = City('Frankfurt', country1)

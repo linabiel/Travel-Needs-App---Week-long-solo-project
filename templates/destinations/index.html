@@ -3,7 +3,6 @@
 
 <h1>Choose Your Destination: </h1>
 
-
 <form class="destination-form" action="/destinations" method="post">
     <label for="user">Choose a Traveller: </label>
     <select name="user" id="user">
@@ -12,14 +11,6 @@
         <option value="{{ user.id }}">{{ user.name }}</option>   
             {% endfor %}
     </select>
-
-    <!-- <label for="country">Choose a Country: </label>
-    <select name="country" id="country">
-        <option value=""></option>
-        {% for country in countries %}
-        <option value="{{ country.id }}">{{ country.name }}</option>   
-            {% endfor %}
-    </select> -->
 
     <label for="city">Choose a City: </label>
     <select name="city" id="city">
@@ -40,8 +31,6 @@
 <h3>Click here to add Countries and Cities:</h3>
 <button><a href="/destinations/add">ADD</a></button>
 
-
-
 <h2>Places You Want To Visit: </h2>
 
 {% for destination in destinations %}  
@@ -60,8 +49,6 @@
     <button class="user-button"><a class="user-button-url" href="/destinations/{{destination.id}}/edit">Edit</a></button>
     <button class="user-button"><a class="user-button-url" href="/destinations/{{destination.id}}/delete">Delete</a></button>
 </div>
-
 {% endfor %} 
-
 
 {% endblock %}

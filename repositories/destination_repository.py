@@ -8,8 +8,7 @@ from repositories import user_repository, city_repository, country_repository
 
 def save(destination):
     sql = "INSERT INTO destinations (user_id, country_id, city_id, visited) VALUES (%s, %s, %s, %s) RETURNING *"
-    values = [destination.user.id, destination.country.id,
-              destination.city.id, destination.visited]
+    values = [destination.user.id, destination.country.id, destination.city.id, destination.visited]
     results = run_sql(sql, values)
     destination.id = results[0]['id']
     return destination

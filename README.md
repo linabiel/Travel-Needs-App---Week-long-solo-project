@@ -3,7 +3,7 @@ Travel Needs
 The app Travel Needs helps Oscal Wilde, Peter Parker and Me to track our dream destinations: places we visited and palces we still want to travel to.
 
 Tools Used: 
-  HTML/CSS```
+  HTML/CSS
   Python
   Flask
   PostgreSQL

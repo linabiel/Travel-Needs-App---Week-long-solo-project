@@ -26,7 +26,7 @@ def destinations():
 @destinations_blueprint.route('/destinations', methods=['POST'])
 def select_destination():
     # retrieve user name from the input form
-    # retreive city name from the input form
+    # retrieve city name from the input form
     # get the user's id using select(id) method
     # get the city's id using select(id) method
     # create a new destination object

@@ -22,6 +22,8 @@ Extensions:
 
 
 Run Commands:
+```
   psql -d travel_needs -f db/travel_needs.sql
+  ```
   python3 console.py
   flask run

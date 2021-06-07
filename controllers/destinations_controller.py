@@ -25,6 +25,13 @@ def destinations():
 # Receives the data that we sent from the form to insert into the database
 @destinations_blueprint.route('/destinations', methods=['POST'])
 def select_destination():
+    # retrieve user name from the input form
+    # retreive city name from the input form
+    # get the user's id using select(id) method
+    # get the city's id using select(id) method
+    # create a new destination object
+    # save the object to the database
+    # after creating destination keep the user on the same url and display the newly added destiantion
     user_id = request.form['user']
     city_id = request.form['city']
     user = user_repository.select(user_id)

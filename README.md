@@ -1,6 +1,6 @@
 ## Travel Needs
 
-The app Travel Needs helps Oscal Wilde, Peter Parker and Me to track our dream destinations: places we visited and palces we still want to travel to.
+The app Travel Needs helps Oscal Wilde, Peter Parker and Me to track our dream destinations: places we visited and places we still want to travel to.
 
 ## Tools Used: <br/>
   HTML/CSS <br/>

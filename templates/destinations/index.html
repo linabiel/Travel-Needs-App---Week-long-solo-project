@@ -1,54 +1,59 @@
 {% extends 'base.html' %}
 {% block body %}
 
-<h1>Choose Your Destination: </h1>
+	<h1>Choose Your Destination: </h1>
 
-<form class="destination-form" action="/destinations" method="post">
-    <label for="user">Choose a Traveller: </label>
-    <select name="user" id="user">
-        <option value=""></option>
-        {% for user in users %}
-        <option value="{{ user.id }}">{{ user.name }}</option>   
-            {% endfor %}
-    </select>
+	<form class="destination-form" action="/destinations" method="post">
+		<label for="user">Choose a Traveller: </label>
+		<select name="user" id="user">
+			<option value=""></option>
+			{% for user in users %}
+				<option value="{{ user.id }}">{{ user.name }}</option>
+			{% endfor %}
+		</select>
 
-    <label for="city">Choose a City: </label>
-    <select name="city" id="city">
-        <option value=""></option>
-        {% for city in cities %}
-        {% for country in countries %}
-        {% if country.id == city.country.id %} 
-        <option value="{{city.id}}">{{ country.name }}, {{ city.name }}</option>   
-        {% endif %}   
-        {% endfor %}
-        {% endfor %}
-    </select>
+		<label for="city">Choose a City: </label>
+		<select name="city" id="city">
+			<option value=""></option>
+			{% for city in cities %}
+				{% for country in countries %}
+					{% if country.id == city.country.id %}
+						<option value="{{ city.id }}">{{ country.name }}, {{ city.name }}</option>
+					{% endif %}
+				{% endfor %}
+			{% endfor %}
+		</select>
 
-    <input type='submit' value="ADD" a href="/destinations"></a></input>
-</form>
+		<input type='submit' value="ADD" a href="/destinations"></a></input>
+	</form>
 
 
-<h3>Click here to add Countries and Cities:</h3>
-<button><a href="/destinations/add">ADD</a></button>
+	<h3>Click here to add Countries and Cities:</h3>
+	<button><a href="/destinations/add">ADD</a></button>
 
-<h2>Places You Want To Visit: </h2>
+	<h2>Places You Want To Visit: </h2>
 
-{% for destination in destinations %}  
-<div class="places-to-visit">
-    <b class="users-destinations-list">
-   {{ destination.user.name }},
-   {{ destination.country.name }},
-   {{ destination.city.name }}
-    {% if destination.visited == True %}
-    </b>
-        <b class="users-destinations-list"><span style='font-size:16px;'>&#10003;</span></b>
-    {% else %}
-    </b>
-        <b class="users-destinations-list"><span style='font-size:16px;'>&#10005;</span></b>
-    {% endif %}
-    <button class="user-button"><a class="user-button-url" href="/destinations/{{destination.id}}/edit">Edit</a></button>
-    <button class="user-button"><a class="user-button-url" href="/destinations/{{destination.id}}/delete">Delete</a></button>
-</div>
-{% endfor %} 
+	{% for destination in destinations %}
+{#		<div id="dest-card">#}
+
+			<div class="places-to-visit">
+				<b class="users-destinations-list">
+					{{ destination.user.name }},
+					{{ destination.country.name }},
+					{{ destination.city.name }}
+					{% if destination.visited == True %}
+						</b>
+						<b class="users-destinations-list"><span style='font-size:16px;'>&#10003;</span></b>
+					{% else %}
+						</b>
+						<b class="users-destinations-list"><span style='font-size:16px;'>&#10005;</span></b>
+					{% endif %}
+				<button class="user-button"><a class="user-button-url" href="/destinations/{{ destination.id }}/edit">Edit</a>
+				</button>
+				<button class="user-button"><a class="user-button-url" href="/destinations/{{ destination.id }}/delete">Delete</a>
+				</button>
+			</div>
+{#		</div>#}
+	{% endfor %}
 
 {% endblock %}

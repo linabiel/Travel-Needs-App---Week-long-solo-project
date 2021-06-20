@@ -5,10 +5,10 @@ from models.destination import Destination
 
 from repositories import user_repository, country_repository, city_repository, destination_repository
 
-# user_repository.delete_all()
-# city_repository.delete_all()
-# country_repository.delete_all()
-# destination_repository.delete_all()
+user_repository.delete_all()
+city_repository.delete_all()
+country_repository.delete_all()
+destination_repository.delete_all()
 
 user1 = User('Lina', 'Edinburgh', 'Scotland')
 user_repository.save(user1)

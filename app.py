@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 from controllers.visits_controller import visits_blueprint
 from controllers.destinations_controller import destinations_blueprint

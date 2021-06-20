@@ -17,7 +17,7 @@ The app Travel Needs helps Oscal Wilde, Peter Parker and Me to track our dream d
 
 ## Extensions: <br/>
 
-  Have separate pages for destinations visited and those still to visit <br/>
+  Have separate pages for destinations visited, and those still to visit <br/>
   Search for destination by city or country
 
 

@@ -1,7 +1,7 @@
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
-    background-image: url(../images/rock.jpeg);
+    background-image: url(../images/sunset.jpeg);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: 100% 100%;
@@ -217,7 +217,6 @@ select {
 user-button {
     cursor: pointer;
     color: white;
-
 }
 
 user-button-url {
@@ -227,19 +226,6 @@ user-button-url {
 /* ADD A DESTINATION ADD A DESTINATION ADD A DESTINATION ADD A DESTINATION ADD A DESTINATION ADD A DESTINATION */
 .dest-field {
     display: flex;
-}
-
-#dest-card {
-  margin: 30px;
-  padding: 30px;
-  width: 200px;
-  box-shadow: 5px 10px 8px #888888;
-  color: white;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: center;
-  border-radius: 25px;
 }
 
 #dest-add-button {
